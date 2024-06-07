@@ -1,4 +1,5 @@
-﻿namespace setControlBounds
+﻿
+namespace category_choise
 {
     partial class Form1
     {

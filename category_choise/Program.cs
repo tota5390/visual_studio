@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace setControlBounds
+namespace category_choise
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53D2AF02-DF36-4652-8060-CE46B86B7686}</ProjectGuid>
+    <ProjectGuid>{61CB0F04-2908-44C5-A78C-FFD96ED97AFA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>setControlBounds</RootNamespace>
-    <AssemblyName>setControlBounds</AssemblyName>
+    <RootNamespace>category_choise</RootNamespace>
+    <AssemblyName>category_choise</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

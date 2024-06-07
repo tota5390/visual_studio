@@ -55,26 +55,48 @@ namespace category
             List<string> category_list = new List<string>();
             category_list = this.ReadCSVFile(category_file, false);
             DataGridView[] data_grid_views = new DataGridView[category_list.Count];
+            DataGridViewButtonColumn[] delete_buttons = new DataGridViewButtonColumn[category_list.Count];
+
             for(int i = 0; i < category_list.Count; i++)
             {
                 data_grid_views[i] = this.SetDataGridView(data_grid_view);
                 this.ItemDataGridView(ref data_grid_views[i]);
                 data_grid_views[i].AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
                 this.calcTabPage(ref this.category_tab_size, base_size, this.form1_tab_control.Size);
                 TabPage category_tab_page = this.MakeTabPage(category_list[i], this.category_tab_size);
                 form1_tab_control.Controls.Add(category_tab_page);
+
+                this.SetDeleteButton(ref delete_buttons[i]);
+                data_grid_views[i].Columns.Add(delete_buttons[i]);
                 category_tab_page.Controls.Add(data_grid_views[i]);
+                data_grid_views[i].CellContentClick += new DataGridViewCellEventHandler(this.deleteClick);
             }
+        }
+
+        private void deleteClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            if(data.Columns[e.ColumnIndex].Name == "削除" && e.RowIndex != data.RowCount - 1)
+            {
+                data.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void SetDeleteButton(ref DataGridViewButtonColumn delete_button)
+        {
+            delete_button = new DataGridViewButtonColumn();
+            delete_button.Name = "削除";
+            delete_button.UseColumnTextForButtonValue = true;
+            delete_button.Text = "✕";
         }
 
         private void ItemDataGridView(ref DataGridView data_grid_view)
         {
-            data_grid_view.ColumnCount = 5;
-            data_grid_view.Columns[0].HeaderText = "カテゴリ";
-            data_grid_view.Columns[1].HeaderText = "商品名";
-            data_grid_view.Columns[2].HeaderText = "値段";
-            data_grid_view.Columns[3].HeaderText = "在庫数";
-            data_grid_view.Columns[4].HeaderText = "削除";
+            data_grid_view.ColumnCount = 3;
+            data_grid_view.Columns[0].HeaderText = "商品名";
+            data_grid_view.Columns[1].HeaderText = "値段";
+            data_grid_view.Columns[2].HeaderText = "在庫数";
             data_grid_view.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }

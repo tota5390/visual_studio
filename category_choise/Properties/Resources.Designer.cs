@@ -8,10 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace setControlBounds.Properties
+
+namespace category_choise.Properties
 {
-
-
     /// <summary>
     ///   ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
     /// </summary>
@@ -44,7 +43,7 @@ namespace setControlBounds.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("setControlBounds.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("category_choise.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
